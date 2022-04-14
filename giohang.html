@@ -1,0 +1,171 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khải Minh Moblie</title>
+    <link rel="stylesheet" href="./giohang.css">
+    <link rel="stylesheet" href="./home.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        form {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        form input {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="ss();">
+    <header>
+        <div class="login">
+            <a href="#">Đăng Nhập</a>
+            <a href="./dangki.html">Đăng kí</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Trang chủ</a></li>
+            <li><a href="#">Điện thoại</a></li>
+            <li><a href="#">Máy tính bảng</a></li>
+            <li><a href="#">Laptop</a></li>
+            <li><a href="#">Phụ kiện điện thoại</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>Giỏ Hàng</h1>
+        <table name="bang" border="2">
+            <tr style="background-color: coral;">
+                <th>STT</th>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thành tiền</th>
+                <th>Lệnh</th>
+            </tr>
+            <tbody id="mycart">
+
+            </tbody>
+        </table>
+        <div class="container">
+            <form name="form">
+                <h1>Đặt mua hàng</h1>
+                <fieldset>
+                    <legend>Họ và tên</legend>
+                    <input type="text" name="ten" required>
+                    <div id="kten"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Số điện thoại</legend>
+                    <input type="text" name="sdt" pattern="0[0-9]{9,10}" title="vui lòng nhập cho đúng nha"
+                        required>
+                    <div id="ksdt"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <input type="text" name="mail"
+                        pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+                        title="Nhập như ví dụ: k@Gmail.com" required>
+                    <div id="kmail"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Nơi nhận hàng</legend>
+                    <select name="noinhan" required>
+                        <option value="">---- Chọn nơi nhận ----</option>
+                        <option value="Quận 1">Quận 1</option>
+                        <option value="Quận 2">Quận 2</option>
+                        <option value="Quận 3">Quận 3</option>
+                    </select>
+                </fieldset>
+                <button id="myBtn" onload="ktbt();" disabled>Đặt mua</button>
+            </form>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <span>Khách hàng: <span id="ttkh"></span> </span> <br>
+                    <span>Số điện thoại: <span id="ttkh"></span></span> <br>
+                    <span>Email: <span id="ttkh"></span></span> <br>
+                    <span>Địa chỉ: <span id="ttkh"></span></span> <br>
+                    <span>Sản phẩm:</span> <br>
+                    <table border="1" id="ttkh"></table>
+                    <div align="center">Đã mua thành công</div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var modal = document.getElementById("myModal");
+            var form = document.forms[0];
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function nhan() {
+                modal.style.display = "block";
+                var tenkh = form.ten.value;
+                var sdt = form.sdt.value;
+                var mail = form.mail.value;
+                var diachi = form.noinhan.value;
+                arrkh.push(tenkh, sdt, mail, diachi);
+                form.ten.value = "";
+                form.sdt.value = "";
+                form.noinhan.value = "";
+                form.mail.value = "";
+                document.getElementById("mycart").innerHTML = "";
+                hoadon();
+                modal.focus();
+                return false;
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                sessionStorage.removeItem("sp");
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    sessionStorage.removeItem("sp");
+                    modal.style.display = "none";
+                }
+            }
+            function ktbt(){
+                var q = JSON.parse(sessionStorage.getItem("sp"));
+                console.log(q.length);
+                if(q.length==0){
+                    document.getElementsByClassName("myBtn").disabled = true;
+                } else{
+                    document.getElementsByClassName("myBtn").disabled = false;
+                }
+                setInterval(ktbt,1000);
+            }
+        </script>
+        <script src="./giohang.js"></script>
+    </article>
+</body>
+
+</html>

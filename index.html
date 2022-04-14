@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khải Minh Moblie</title>
+    <link rel="stylesheet" href="./home.css">
+    <script src="./home.js"></script>
+    <script src="https://kit.fontawesome.com/d5aa26e7fe.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="capnhatgiohang();">
+
+    <header>
+        <div class="login">
+            <a href="#">Đăng Nhập</a>
+            <a href="./dangki.html">Đăng kí</a>
+        </div>
+
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Điện thoại</a></li>
+            <li><a href="#">Máy tính bảng</a></li>
+            <li><a href="#">Laptop</a></li>
+            <fli><a href="#">Phụ kiện điện thoại</a></fli>
+        </ul>
+        <div id="giohang">
+            <a href="./giohang.html"><i class="fa-solid fa-cart-shopping"></i> <span id="countsp">0</span></a>
+        </div>
+    </nav>
+    <article>
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img onmouseover="stop();" onmouseout="setInterval(auto(), 3000)" src="./img/qc/qc1.png" width="100%"
+                    id="hinh">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+        <p>Điện thoại</p>
+        <div id="box">
+            <img id="anhsp" src="./img/ip/ip1.jpg" alt="Ảnh sản phẩm">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <a id="1" href="">IPHONE 12 PRO MAX</a>
+            <div class="icon">
+                <b id="giasp">29.000.000</b>
+                <input type="number" min="1" value="1" max="10" step="1">
+                <button onclick="themvaogiohang(this)"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div id="box">
+            <img id="anhsp" src="./img/ip/ip2.jpg" alt="Ảnh sản phẩm">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <a id="2" href="">IPHONE 11</a>
+            <div class="icon">
+                <b id="giasp">16.200.000</b>
+                <input type="number" min="1" value="1" max="10" step="1">
+                <button onclick="themvaogiohang(this)"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div id="box">
+            <img id="anhsp" src="./img/ip/ip3.jpg" alt="Ảnh sản phẩm">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <a id="3" href="">IPHONE 13</a>
+            <div class="icon">
+                <b id="giasp">29.000.000</b>
+                <input type="number" min="1" value="1" max="10" step="1">
+                <button onclick="themvaogiohang(this)"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div id="box">
+            <img id="anhsp" src="./img/ip/ip4.jpg" alt="Ảnh sản phẩm">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <a id="4" href="">IPHONE 12 PRO MAX</a>
+            <div class="icon">
+                <b id="giasp">24.190.000</b>
+                <input type="number" min="1" value="1" max="10" step="1">
+                <button onclick="themvaogiohang(this)"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+        <div id="box">
+            <img id="anhsp" src="./img/ip/ip5.jpg" alt="Ảnh sản phẩm">
+            <div class="star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <a id="5" href="">IPHONE SE</a>
+            <div class="icon">
+                <b id="giasp">12.990.000</b>
+                <input type="number" min="1" value="1" max="10" step="1">
+                <button onclick="themvaogiohang(this)"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </article>
+    <script>
+        var t = sessionStorage.getItem("countsp");
+        document.getElementById("countsp").innerText = t;
+        function capnhatgiohang() {
+            sessionStorage.setItem("countsp", t.length);
+            document.getElementById("countsp").innerText = t;
+            setTimeout(capnhatgiohang, 100);
+
+        }
+    </script>
+    <script src="./anh.js"></script>
+</body>
+
+</html>
