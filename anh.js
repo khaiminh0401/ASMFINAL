@@ -2,7 +2,7 @@ var k = 0;
 var hinh = [];
 for (var i = 0; i < 5; i++) {
     hinh[i] = new Image();
-    hinh[i].src = "../img/qc/qc" + (i + 1) + ".png";
+    hinh[i].src = "./img/qc/qc" + (i + 1) + ".png";
 }
 
 let slideIndex = 0;
